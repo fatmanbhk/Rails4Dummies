@@ -10,6 +10,10 @@
   </head>
 
   <body>
+  <%# not using standard as we will use bootstrap %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-#(name)") %>
+      <%end%>
     <%= yield %>
   </body>
 </html>
